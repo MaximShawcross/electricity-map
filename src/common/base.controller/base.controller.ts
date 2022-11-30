@@ -8,6 +8,12 @@ export default abstract class BaseController implements IBaseController{
 	private readonly _router: Router;
 	private logger: LoggerService;
 
+	
+	public get router() : Router {
+		return this._router
+	}
+	
+
 	constructor(logger: LoggerService) {
 		this._router = Router();
 		this.logger = logger;

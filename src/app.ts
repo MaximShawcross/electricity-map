@@ -1,13 +1,15 @@
 import { Server } from "http";
 import express, {Express} from "express";
 import LoggerService from "./logger/logger.service";
+import UsersContoller from "./users/users.controller";
 
 export default class App {
 	private app: Express;
 	private server: Server;
 	private port: number = 3000;
+	// private usersController: UsersContoller;
 
-	constructor(private logger: LoggerService) {
+	constructor(private logger: LoggerService, private usersController: UsersContoller) {
 		this.logger = logger;
 		this.server = new Server();
 		this.app = express();
@@ -18,7 +20,7 @@ export default class App {
 	}
 
 	useRoutes(): void {
-		this.app.use("/login", )
+		this.app.use("/login", this.usersController.router);
 	}
 
 	useExeptionFilter(): void {
