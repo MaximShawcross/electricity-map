@@ -4,13 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-	"start": "node ./dist/main.js",
+    "start": "node ./dist/main.js",
     "dev": "nodemon",
     "test": "test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MaximShawcross/electricity-map.git"
+    "url": "https://github.com/MaximShawcross/electricity-map.git"
   },
   "keywords": [
     "electricity",
@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "express": "^4.18.2",
+    "tslog": "^4.4.4",
     "typescript": "^4.9.3"
   }
 }
