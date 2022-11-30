@@ -1,12 +1,14 @@
 import { Server } from "http";
 import express, {Express} from "express";
+import LoggerService from "./logger/logger.service";
 
 export default class App {
 	private app: Express;
 	private server: Server;
 	private port: number = 3000;
 
-	constructor() {
+	constructor(private logger: LoggerService) {
+		this.logger = logger;
 		this.server = new Server();
 		this.app = express();
 	}
@@ -16,7 +18,7 @@ export default class App {
 	}
 
 	useRoutes(): void {
-
+		this.app.use("/login", )
 	}
 
 	useExeptionFilter(): void {
@@ -29,7 +31,7 @@ export default class App {
 		this.useRoutes();
 		this.useExeptionFilter();
 
-		console.log(`server started on localhost:${this.port}`);
+		this.logger.info(`server started on localhost:${this.port}`);
 		
 	};
 };
